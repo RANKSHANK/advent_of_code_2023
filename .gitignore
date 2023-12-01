@@ -1,0 +1,8 @@
+.direnv
+
+day*/debug
+day*/target
+*Cargo.lock
+*.rs.bk
+
+*.pdb
