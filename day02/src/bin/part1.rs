@@ -37,28 +37,24 @@ fn part1(input: &str, red: u32, green: u32, blue: u32) -> String {
                 match c {
                     'r' => {
                         if val > red {
-                            println!("Game {} failed r {} > {} ", game, val, red);
                             mode = Mode::GAME;
                         }
                         val = 0;
                     },
                     'g' => {
                         if val > green {
-                            println!("Game {} failed b {} > {} ", game, val, green);
                             mode = Mode::GAME;
                         }
                         val = 0;
                     },
                     'b' => {
                         if val > blue {
-                            println!("Game {} failed g {} > {} ", game, val, blue);
                             mode = Mode::GAME;
                         }
                         val = 0;
                     },
                     ' ' => {},
                     '\n' => {
-                        println!("Game {} success", game);
                         success += game;
                         mode = Mode::GAME;
                     },
@@ -73,9 +69,6 @@ fn part1(input: &str, red: u32, green: u32, blue: u32) -> String {
                         val = 0;
                     },
                     _ => {
-                        if val > 0 {
-                            print!("{}", c);
-                        }
                     },
                 }
                 continue;

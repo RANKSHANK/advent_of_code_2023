@@ -13,7 +13,6 @@ fn part2(input: &str) -> String {
     let zero : u32 = '0' as u32;
     let mut mode : Mode = Mode::GAME;
     let mut val : u32 = 0;
-    let mut game : u32 = 0;
     let mut success : u32 = 0; 
     let mut r : u32 = 0;
     let mut g : u32 = 0;
@@ -27,7 +26,6 @@ fn part2(input: &str) -> String {
             Mode::GAME => {
                 match c {
                     ':' => {
-                        game = val;
                         mode = Mode::COLOR;
                         r = 0;
                         g = 0;
@@ -35,7 +33,6 @@ fn part2(input: &str) -> String {
                         val = 0;
                     },
                     _ => {
-                        val = 0;
                     },
                 }
                 continue;
@@ -63,7 +60,6 @@ fn part2(input: &str) -> String {
                     ' ' => {},
                     '\n' => {
                         success += r * g * b;
-                        println!("Game {} success {}", game, r * g * b);
                         mode = Mode::GAME;
                     },
                     '\0' => {
@@ -77,9 +73,6 @@ fn part2(input: &str) -> String {
                         val = 0;
                     },
                     _ => {
-                        if val > 0 {
-                            print!("{}", c);
-                        }
                     },
                 }
                 continue;
