@@ -57,7 +57,6 @@ fn part2(input: &str) -> String {
                         }
                         val = 0;
                     },
-                    ' ' => {},
                     '\n' => {
                         success += r * g * b;
                         mode = Mode::GAME;
@@ -91,6 +90,6 @@ mod test {
     fn test2() {
         let input = include_str!("test1.txt");
         let result = part2(input);
-        assert_eq!(result, "8".to_string());
+        assert_eq!(result, "2286".to_string());
     }
 }

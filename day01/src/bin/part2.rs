@@ -1,6 +1,11 @@
 fn main() {
     let input = include_str!("input1.txt");
-    dbg!(part2(input));
+    let start = std::time::Instant::now();
+
+    for _ in 0..9999 {
+        part2(input);
+    }
+    println!("{:?}", (start.elapsed() / 10000)); 
 }
 
 fn part2(input: &str) -> String {
